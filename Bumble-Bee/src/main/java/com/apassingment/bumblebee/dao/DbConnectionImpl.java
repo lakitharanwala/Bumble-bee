@@ -7,14 +7,13 @@ import java.sql.SQLException;
 public class DbConnectionImpl implements DbConnector{
 
 	public Connection getDbConnection() throws ClassNotFoundException, SQLException {
-		  Class.forName("com.,ysql.jdbc.Driver");
-		  String url = "jdbc:mysql://localhost:3306/";
+		  Class.forName("com.mysql.cj.jdbc.Driver");
+		  String url = "jdbc:mysql://localhost:3306/bumble_bee";
 		  String userName = "root";
 		  String pw ="root";
 		  
 		  Connection connection=DriverManager.getConnection(url, userName, pw);
 		  return connection;
-	
 	}
 
 	

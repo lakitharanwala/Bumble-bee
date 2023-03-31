@@ -13,36 +13,14 @@ public class User {
     private String userRole; 
     private String dob;
     private String nationalIdentificationNumber;
-    private String status;
-    private String usedAmount;
+    private Byte  status;
+    private String remaingAmount;
     private String insertDateTime;
     private String updateDateTime;
     private String insertUser;
     private String updateUser;
     
-	private User(String userId, String firstName, String lastName, String username, String password, String address,
-			String contact, String emial, String userRole, String dob, String nationalIdentificationNumber,
-			String status, String usedAmount, String insertDateTime, String updateDateTime, String insertUser,
-			String updateUser) {
-		super();
-		this.userId = userId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.username = username;
-		this.password = password;
-		this.address = address;
-		this.contact = contact;
-		this.emial = emial;
-		this.userRole = userRole;
-		this.dob = dob;
-		this.nationalIdentificationNumber = nationalIdentificationNumber;
-		this.status = status;
-		this.usedAmount = usedAmount;
-		this.insertDateTime = insertDateTime;
-		this.updateDateTime = updateDateTime;
-		this.insertUser = insertUser;
-		this.updateUser = updateUser;
-	}
+	
 	
 	public String getUserId() {
 		return userId;
@@ -110,17 +88,17 @@ public class User {
 	public void setNationalIdentificationNumber(String nationalIdentificationNumber) {
 		this.nationalIdentificationNumber = nationalIdentificationNumber;
 	}
-	public String getStatus() {
+	public Byte getStatus() {
 		return status;
 	}
-	public void setStatus(String status) {
+	public void setStatus(Byte status) {
 		this.status = status;
 	}
-	public String getUsedAmount() {
-		return usedAmount;
+	public String getRemaingAmount() {
+		return remaingAmount;
 	}
-	public void setUsedAmount(String usedAmount) {
-		this.usedAmount = usedAmount;
+	public void setRemaingAmount(String remaingAmount) {
+		this.remaingAmount = remaingAmount;
 	}
 	public String getInsertDateTime() {
 		return insertDateTime;
@@ -147,7 +125,4 @@ public class User {
 		this.updateUser = updateUser;
 	}
     
-		
-	
-	
 }

@@ -1,9 +1,8 @@
 package com.apassingment.bumblebee.model;
 
-public class Products {
-	
+public class Brand {
+
 	private String Id;
-    private String categoryId;
     private String Name;
     private String status;
     private String usedAmount;
@@ -12,38 +11,31 @@ public class Products {
     private String insertUser;
     private String updateUser;
     
-    
-    
-    private Products(String id, String categoryId, String name, String status, String usedAmount,
-		String insertDateTime, String updateDateTime, String insertUser, String updateUser) {
-		Id = id;
-		this.categoryId = categoryId;
-		Name = name;
-		this.status = status;
-		this.usedAmount = usedAmount;
-		this.insertDateTime = insertDateTime;
-		this.updateDateTime = updateDateTime;
-		this.insertUser = insertUser;
-		this.updateUser = updateUser;
+	private Brand(String id, String name, String status, String usedAmount, String insertDateTime,
+			String updateDateTime, String insertUser, String updateUser) {
+		super();
+		setId(id);
+		setName(name);
+		this.setStatus(status);
+		this.setUsedAmount(usedAmount);
+		this.setInsertDateTime(insertDateTime);
+		this.setUpdateDateTime(updateDateTime);
+		this.setInsertUser(insertUser);
+		this.setUpdateUser(updateUser);
 	}
 
-
-
-    public String getId() {
+	public String getId() {
 		return Id;
 	}
+
 	public void setId(String id) {
 		Id = id;
 	}
-	public String getCategoryId() {
-		return categoryId;
-	}
-	public void setCategoryId(String categoryId) {
-		this.categoryId = categoryId;
-	}
+
 	public String getName() {
 		return Name;
 	}
+
 	public void setName(String name) {
 		Name = name;
 	}
@@ -51,39 +43,50 @@ public class Products {
 	public String getStatus() {
 		return status;
 	}
+
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
 	public String getUsedAmount() {
 		return usedAmount;
 	}
+
 	public void setUsedAmount(String usedAmount) {
 		this.usedAmount = usedAmount;
 	}
+
 	public String getInsertDateTime() {
 		return insertDateTime;
 	}
+
 	public void setInsertDateTime(String insertDateTime) {
 		this.insertDateTime = insertDateTime;
 	}
+
 	public String getUpdateDateTime() {
 		return updateDateTime;
 	}
+
 	public void setUpdateDateTime(String updateDateTime) {
 		this.updateDateTime = updateDateTime;
 	}
+
 	public String getInsertUser() {
 		return insertUser;
 	}
+
 	public void setInsertUser(String insertUser) {
 		this.insertUser = insertUser;
 	}
+
 	public String getUpdateUser() {
 		return updateUser;
 	}
+
 	public void setUpdateUser(String updateUser) {
 		this.updateUser = updateUser;
 	}
-}
-
     
+    
+}
