@@ -27,8 +27,9 @@ public class UserController extends HttpServlet{
 		
 		String id = request.getParameter("id");
 		String type = request.getParameter("type");
+		String req=request.getParameter("userName");
 		
-		if(id==null&&type==null) {
+		if(id==null&&type==null&&req==null) {
 			viewUserList(request, response);
 		}else if(!(id==null)&& "del".equals(type)) {
 			try {
@@ -38,8 +39,11 @@ public class UserController extends HttpServlet{
 			}
 		}
 		
+		
 		if("edit".equals(type)) {
 			editUser(request, response,id);
+		}else if (!(req==null)) {
+			userSearch(request, response);
 		}
 		
 	}
@@ -113,6 +117,27 @@ public class UserController extends HttpServlet{
 				e.printStackTrace();
 			}
 			response.sendRedirect("user-List");
+			
+	}
+	
+	
+	private void userSearch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 
+		String userSearch=request.getParameter("userName");
+		List<User> UserList=new ArrayList<User>();
+		try {
+			UserList =userService.UserSearch(userSearch);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 
+		request.setAttribute("userList", UserList);
+		RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/pages/user-List.jsp");
+		rd.forward(request, response);
 			
 	}
 	

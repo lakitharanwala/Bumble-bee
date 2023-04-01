@@ -72,7 +72,7 @@
                   <input type="text" class="form-control" placeholder="User Name" aria-label="User Name"  name="userName" value="${userdetails.username}">
                 </div>
                  <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="User Name" aria-label="User Name"  name="userId" value="${userdetails.userId}">
+                  <input type="hidden" class="form-control" placeholder="User Name" aria-label="User Name"  name="userId" value="${userdetails.userId}">
                 </div>
                 <div class="text-center">
                   <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">EditUser</button>

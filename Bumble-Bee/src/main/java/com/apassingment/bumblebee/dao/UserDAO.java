@@ -114,5 +114,34 @@ public class UserDAO {
 		
 		return null;
 	}
+
+	public List<User> getUserSearch(String userSearch) throws ClassNotFoundException, SQLException {
+		Connection connection =connection();
+		String quray ="SELECT * FROM user WHERE user_name=?";
+		
+		PreparedStatement ps=connection.prepareStatement(quray);
+		ps.setString(1, userSearch);
+		ResultSet rs=ps.executeQuery();
+		
+		
+
+		List<User>userDeails=new ArrayList<User>();
+		
+		while(rs.next()){
+			User user=new User();
+			user.setFirstName(rs.getString("first_name"));
+			user.setLastName(rs.getString("last_name"));
+			user.setUsername(rs.getString("user_name"));
+			user.setAddress(rs.getString("addres"));
+			user.setContact(rs.getString("contact"));
+			user.setUserId(rs.getString("user_id"));
+			user.setRemaingAmount(rs.getString("remaing_amount"));
+			user.setEmial(rs.getString("email"));
+			userDeails.add(user);
+		}
+		ps.close();
+		connection.close();
+		return userDeails;
+	}
 	
 }

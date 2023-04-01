@@ -37,6 +37,10 @@ private static UserService userService;
 		
 	}
 
+	public List<User> UserSearch(String userSearch) throws ClassNotFoundException, SQLException {
+		return getUserDAO().getUserSearch(userSearch);
+	}
+
 	
 	
 }
