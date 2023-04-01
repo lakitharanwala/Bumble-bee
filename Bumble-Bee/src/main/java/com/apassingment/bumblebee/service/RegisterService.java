@@ -25,8 +25,10 @@ public class RegisterService extends IdGenImpl{
 	public User RegisterUser(User user) throws ClassNotFoundException, SQLException {
 		user.setUserId(getId());
 		user.setStatus(Status.ACTIVE.getDatabaseValue());
-		
-		return getRegisterDAO().saveUser(user);
+		user.setUserRole("2");
+		user.setRemaingAmount("15,000");
+		getRegisterDAO().saveUser(user);
+		 return user;
 	}
 
 	

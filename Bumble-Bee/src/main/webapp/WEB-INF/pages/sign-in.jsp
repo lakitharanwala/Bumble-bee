@@ -23,11 +23,8 @@
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   
   <!-- CSS Files -->
-	<link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
-   <%--  <jsp:include page="/WEB-INF/common/css-inclueds.jsp"/>  --%>
- 
-
-</head>
+ <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" type="text/css"/>  
+	</head>
 
 <body class="">
 
@@ -52,7 +49,7 @@
                   <p class="mb-0">Enter your User name and password</p>
                 </div>
                 <div class="card-body">
-                  <form role="form" action="login" method="POST"> 
+                  <form role="form" action="dashboard" method="POST"> 
                     <div class="mb-3">
                       <input type="text" class="form-control form-control-lg" placeholder="UserName" aria-label="Email" name="userName">
                     </div>
@@ -68,7 +65,8 @@
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-4 text-sm mx-auto">
                     Register User account?
-                    <a href="javascript:;" class="text-primary text-gradient font-weight-bold">Sign up</a>
+                   <a href="<%=request.getContextPath()%>/user-register" class="text-primary text-gradient font-weight-bold">Sign up</a>
+                    
                   </p>
                 </div>
               </div>

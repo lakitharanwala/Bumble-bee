@@ -66,7 +66,7 @@
             </div>
            
             <div class="card-body">
-              <form role="form" action="register" method="POST">
+              <form role="form" action="user-profile" method="POST">
                 <div class="mb-3">
                   <input type="text" class="form-control" placeholder="First Name" aria-label="First Name"   name="firstName">
                 </div>

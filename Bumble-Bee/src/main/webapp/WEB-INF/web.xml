@@ -9,17 +9,7 @@
    <welcome-file>/WEB-INF/pages/sign-in.jsp</welcome-file>  
   </welcome-file-list>
   
-   
-  
-  <servlet>
-  	<servlet-name>UserController</servlet-name>
-  	<display-name>UserController</display-name>
-  	<description>User related requests</description>
-  	<servlet-class>com.apassingment.bumblebee.controller.UserController</servlet-class>
-  </servlet>
-  
-  
-  
+  <!-- ///////////////LoginController/////////////// -->
   <servlet>
   	<servlet-name>LoginController</servlet-name>
   	<display-name>LoginController</display-name>
@@ -32,7 +22,13 @@
   	<url-pattern>/login</url-pattern>
   </servlet-mapping>
   
-<servlet>
+  <servlet-mapping>
+  	<servlet-name>LoginController</servlet-name>
+  	<url-pattern>/dashBoard</url-pattern>
+  </servlet-mapping>
+  
+   <!-- ///////////////RegisterController/////////////// -->
+  <servlet>
   	<servlet-name>RegisterController</servlet-name>
   	<display-name>RegisterController</display-name>
   	<description>register requests</description>
@@ -41,7 +37,12 @@
   
   <servlet-mapping>
   	<servlet-name>RegisterController</servlet-name>
-  	<url-pattern>/register</url-pattern>
+  	<url-pattern>/user-register</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>RegisterController</servlet-name>
+  	<url-pattern>/user-profile</url-pattern>
   </servlet-mapping>
   
 </web-app>
