@@ -32,7 +32,6 @@ public class LoginController extends HttpServlet{
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		viewdashBoard(request, response);
 	}
 
 	
@@ -40,22 +39,13 @@ public class LoginController extends HttpServlet{
 		login(request, response);
 	}
 	
-	
-	private void viewdashBoard(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/pages/dashboard.jsp");
-		rd.forward(request, response);
-	}
-	
-	
 	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		String userName = request.getParameter("userName");
 		String password = request.getParameter("password");
 		
 		try {
 			if(loginService.validate(userName,password)){  
-//				ServletContext context = request.getServletContext();
-//				RequestDispatcher dispatcher = context.getRequestDispatcher("/dashBoard");
-//				dispatcher.forward(request, response);
+
 				
 				response.sendRedirect("dashBoard");
 				

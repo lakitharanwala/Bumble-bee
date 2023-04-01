@@ -24,11 +24,29 @@ public class UserController extends HttpServlet{
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		viewUserList(request, response);
+		
+		String id = request.getParameter("id");
+		String type = request.getParameter("type");
+		
+		if(id==null&&type==null) {
+			viewUserList(request, response);
+		}else if(!(id==null)&& "del".equals(type)) {
+			try {
+				deleteUser(request, response,id);
+			} catch (ClassNotFoundException | ServletException | IOException | SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		if("edit".equals(type)) {
+			editUser(request, response,id);
+		}
+		
 	}
 
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       
+       saveEditUser(request, response);
 	}	
 	
 	private void viewUserList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -36,10 +54,8 @@ public class UserController extends HttpServlet{
 		try {
 			UserList = userService.getUserList();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -47,6 +63,59 @@ public class UserController extends HttpServlet{
 		RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/pages/user-List.jsp");
 		rd.forward(request, response);
 	}
+	
+	private void deleteUser(HttpServletRequest request, HttpServletResponse response, String id) throws ServletException, IOException, ClassNotFoundException, SQLException {
+		
+		boolean status=userService.getdelete(id);
+		if(status){  
+			request.setAttribute("status", status);
+			response.sendRedirect("user-List");
+		}  
+		else{  
+			response.sendRedirect("dashBoard");
+		}
+		
+			}
+	
+	private void editUser(HttpServletRequest request, HttpServletResponse response,String id) throws ServletException, IOException {
+		User Userdetails = new User();
+		try {
+			Userdetails = userService.geteditUser(id);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		request.setAttribute("userdetails", Userdetails);
+		RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/pages/user-edit.jsp");
+		rd.forward(request, response);
+	}
+	
+	private void saveEditUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 User user =new User(); 
+		 	user.setUserId(request.getParameter("userId"));
+	        user.setFirstName(request.getParameter("firstName"));
+	        user.setLastName(request.getParameter("lastName"));
+	        user.setContact(request.getParameter("contact"));
+	        user.setAddress(request.getParameter("addres"));
+	        user.setEmial(request.getParameter("email"));
+	        user.setUsername(request.getParameter("userName"));
+	        
+	        String msg="";
+			try {
+				userService.SaveEditUser(user);
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			response.sendRedirect("user-List");
+			
+	}
+	
 	
 }
 

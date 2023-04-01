@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.apassingment.bumblebee.model.User;
+import com.apassingment.bumblebee.util.Status;
 
 public class UserDAO {
 
@@ -49,6 +50,69 @@ public class UserDAO {
 		connection.close();
 		return userList;
 
+	}
+
+	public boolean getdeleteUser(String id) throws ClassNotFoundException, SQLException {
+		Connection connection =connection();
+		
+		String quray ="UPDATE user SET status = 1 WHERE user_Id=? ";
+		PreparedStatement ps=connection.prepareStatement(quray);
+		ps.setString(1, id);
+		
+		boolean status=false;
+		ps.executeUpdate(); 
+		  
+
+		return status=true;
+	}
+
+	public User getEditUserDetails(String id) throws ClassNotFoundException, SQLException {
+		Connection connection =connection();
+		String quray ="SELECT * FROM user WHERE user_Id=?";
+		
+		PreparedStatement ps=connection.prepareStatement(quray);
+		ps.setString(1, id);
+		ResultSet rs=ps.executeQuery();
+		
+		if(rs.next()){
+			    rs.getString(1);
+			}
+
+		List<User>userDeails=new ArrayList<User>();
+		
+		
+			User user=new User();
+			user.setFirstName(rs.getString("first_name"));
+			user.setLastName(rs.getString("last_name"));
+			user.setUsername(rs.getString("user_name"));
+			user.setAddress(rs.getString("addres"));
+			user.setContact(rs.getString("contact"));
+			user.setUserId(rs.getString("user_id"));
+			user.setRemaingAmount(rs.getString("remaing_amount"));
+			user.setEmial(rs.getString("email"));
+			
+			
+		
+		ps.close();
+		connection.close();
+		return user;
+	}
+
+	public User getSaveEditUserDetails(User user) throws ClassNotFoundException, SQLException {
+		String id=user.getUserId();
+		Connection connection =connection();
+		
+		String quray="UPDATE user SET first_Name=?,last_name=? WHERE user_id = ?";
+		
+		PreparedStatement ps=connection.prepareStatement(quray);
+		ps.setString(1, user.getFirstName());
+		ps.setString(2, user.getLastName());
+		ps.setString(3, "22441971");
+		
+		ps.executeUpdate(); 
+		
+		
+		return null;
 	}
 	
 }

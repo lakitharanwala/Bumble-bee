@@ -24,6 +24,19 @@ private static UserService userService;
 		return getUserDAO().getAllUser();
 	}
 
+	public boolean getdelete(String id) throws ClassNotFoundException, SQLException {
+		return getUserDAO().getdeleteUser(id);
+	}
+
+	public User geteditUser(String id) throws ClassNotFoundException, SQLException {
+		return getUserDAO().getEditUserDetails(id);
+	}
+
+	public User SaveEditUser(User user) throws ClassNotFoundException, SQLException {
+		return getUserDAO().getSaveEditUserDetails(user);
+		
+	}
+
 	
 	
 }

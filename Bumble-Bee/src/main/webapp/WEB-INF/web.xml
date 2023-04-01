@@ -8,6 +8,19 @@
   <welcome-file-list>  
    <welcome-file>/WEB-INF/pages/sign-in.jsp</welcome-file>  
   </welcome-file-list>
+  <!-- ///////////////Dash Controller/////////////// -->
+ 
+  <servlet>
+  	<servlet-name>dashboardController</servlet-name>
+  	<display-name>dashboardController</display-name>
+  	<description>dashboard view requests</description>
+  	<servlet-class>com.apassingment.bumblebee.controller.dashboardController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>dashboardController</servlet-name>
+  	<url-pattern>/dashBoard</url-pattern>
+  </servlet-mapping>
   
   <!-- ///////////////LoginController/////////////// -->
   <servlet>
@@ -23,10 +36,6 @@
   	<url-pattern>/login</url-pattern>
   </servlet-mapping>
   
-  <servlet-mapping>
-  	<servlet-name>LoginController</servlet-name>
-  	<url-pattern>/dashBoard</url-pattern>
-  </servlet-mapping>
   
    <!-- ///////////////RegisterController/////////////// -->
   <servlet>
@@ -59,6 +68,21 @@
   <servlet-mapping>
   	<servlet-name>UserController</servlet-name>
   	<url-pattern>/user-List</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>UserController</servlet-name>
+  	<url-pattern>/delete</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>UserController</servlet-name>
+  	<url-pattern>/edit</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>UserController</servlet-name>
+  	<url-pattern>/save</url-pattern>
   </servlet-mapping>
   
 </web-app>

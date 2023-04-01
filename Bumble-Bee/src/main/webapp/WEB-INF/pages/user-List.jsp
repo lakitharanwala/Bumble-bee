@@ -5,6 +5,9 @@
 <html lang="en">
 
 <head>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon.png">
@@ -204,15 +207,15 @@
                       </td>
                       
                       <td class="align-middle">
-                        <a href="javascript:;" class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a href="<%=request.getContextPath()%>/edit?type=edit&id=${user.userId}"  class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Edit
-                        </a>
+                        </a> 
                       </td>
                      
                       <td class="align-middle">
-                        <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="delete user">
-                          Delete
-                        </a>
+                        <a href="<%=request.getContextPath()%>/delete?type=del&id=${user.userId}" class="text-danger font-weight-bold text-xs" data-toggle="tooltip"  data-original-title="delete user">
+                        Delete 
+                        </a> 
                       </td>
                      
                     </tr>
@@ -226,7 +229,59 @@
         </div>
       </div>
       
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Edit</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <form >
+  		<div class="form-group">
+    		<label for="exampleInputPassword1">first Name</label>
+    			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  		</div>
+  		<div class="form-group">
+    		<label for="exampleInputPassword1">Last name</label>
+    			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  		</div>
+  		<div class="form-group">
+    		<label for="exampleInputPassword1">user name</label>
+    			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  		</div>
+  		
+  		<div class="form-group">
+    		<label for="exampleInputPassword1">addres</label>
+    			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  		</div>
+  		<div class="form-group">
+    		<label for="exampleInputPassword1">email</label>
+    			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  		</div>
+  		<div class="form-group">
+    		<label for="exampleInputPassword1">contact</label>
+    			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  		</div>
+  		
+  		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+      </div>
       
+    </div>
+  </div>
+</div>
+     
+     
+     
+     
+     
+     
+     
       <footer class="footer pt-6">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
@@ -319,10 +374,10 @@
     </div>
   </div>
   <!--   Core JS Files   -->
-  <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="js/core/popper.min.js"></script>
+  <script src="js/core/bootstrap.min.js"></script>
+  <script src="js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="js/plugins/smooth-scrollbar.min.js"></script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -335,7 +390,10 @@
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+  <script src="js/argon-dashboard.min.js?v=2.0.4"></script>
+  
+  
+  
 </body>
 
 </html>
