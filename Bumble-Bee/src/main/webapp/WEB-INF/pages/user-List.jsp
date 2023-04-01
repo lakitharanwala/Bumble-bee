@@ -42,20 +42,22 @@
           <h6 class="font-weight-bolder text-white mb-0">Active User Accounts</h6>
         </nav>
         
-      <form role="form" action="search" method="Get">
+      <form id="formS" role="form" action="search" method="Get">
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-5" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
             <div class="input-group">
                <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" placeholder="User Name" aria-label="User Name"  name="userName">
+                <input id="SInput" type="text" class="form-control" placeholder="User Name" aria-label="User Name"  name="userName">
+           
             </div>
-               <button type="submit" class="btn btn-info">Search</button>
           	</div>
         </div>
       </form>
         
       </div>
     </nav>
+    
+   
     <!-- End Navbar -->
     <div class="container-fluid py-4">
       <div class="row">
@@ -76,6 +78,7 @@
                       <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Contact</th>
                       <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Remaing_amount</th>
                       <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Email</th>
+                       <th class="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">account status</th>
                       <th class="text-secondary opacity-7"></th>
                       
                     </tr>
@@ -115,7 +118,20 @@
                        <td class="align-middle text-center">
                          <p class="text-xs font-weight-bold mb-0">${user.emial}</p>
                       </td>
+
+						<tag:if test="${user.status eq '0'}">
+						<td class="align-middle text-center">
+                         	<p class="text-xs text-success font-weight-bold mb-0">Active</p>  
+                      	</td>
+                      	
+                      </tag:if>
                       
+                      <tag:if test="${user.status eq '1'}">
+                      		<td class="align-middle text-center">
+                         		<p class="text-xs text-danger font-weight-bold mb-0">Deactive</p>  
+                      		</td>
+                      	</tag:if>
+          
                       <td class="align-middle">
                         <a href="<%=request.getContextPath()%>/edit?type=edit&id=${user.userId}"  class="text-info font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Edit
@@ -302,7 +318,16 @@
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="js/argon-dashboard.min.js?v=2.0.4"></script>
   
-  
+   <script>
+  const inputField = document.getElementById('SInput');
+
+  inputField.addEventListener('keyup', function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();  // prevent default form submission
+      document.getElementById('formS').submit();  // submit the form
+    }
+  });
+</script>
   
 </body>
 

@@ -42,6 +42,9 @@ public class UserDAO {
 			user.setUserId(rs.getString("user_id"));
 			user.setRemaingAmount(rs.getString("remaing_amount"));
 			user.setEmial(rs.getString("email"));
+			user.setStatus(rs.getByte("status"));
+			
+			
 			
 			userList.add(user);
 		}
@@ -80,7 +83,6 @@ public class UserDAO {
 
 		List<User>userDeails=new ArrayList<User>();
 		
-		
 			User user=new User();
 			user.setFirstName(rs.getString("first_name"));
 			user.setLastName(rs.getString("last_name"));
@@ -90,7 +92,6 @@ public class UserDAO {
 			user.setUserId(rs.getString("user_id"));
 			user.setRemaingAmount(rs.getString("remaing_amount"));
 			user.setEmial(rs.getString("email"));
-			
 			
 		
 		ps.close();
@@ -102,12 +103,16 @@ public class UserDAO {
 		String id=user.getUserId();
 		Connection connection =connection();
 		
-		String quray="UPDATE user SET first_Name=?,last_name=? WHERE user_id = ?";
+		String quray="UPDATE user SET first_Name=?,last_name=?,user_name=?,addres=?,contact=?,email=? WHERE user_id = ?";
 		
 		PreparedStatement ps=connection.prepareStatement(quray);
 		ps.setString(1, user.getFirstName());
 		ps.setString(2, user.getLastName());
-		ps.setString(3, "22441971");
+		ps.setString(3, user.getUsername());
+		ps.setString(4, user.getAddress());
+		ps.setString(5, user.getContact());
+		ps.setString(6, user.getEmial());
+		ps.setString(7, id);
 		
 		ps.executeUpdate(); 
 		
@@ -137,6 +142,7 @@ public class UserDAO {
 			user.setUserId(rs.getString("user_id"));
 			user.setRemaingAmount(rs.getString("remaing_amount"));
 			user.setEmial(rs.getString("email"));
+			user.setStatus(rs.getByte("status"));
 			userDeails.add(user);
 		}
 		ps.close();
