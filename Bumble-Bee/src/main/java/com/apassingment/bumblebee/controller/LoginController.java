@@ -53,9 +53,13 @@ public class LoginController extends HttpServlet{
 		
 		try {
 			if(loginService.validate(userName,password)){  
-				ServletContext context = request.getServletContext();
-				RequestDispatcher dispatcher = context.getRequestDispatcher("/dashBoard");
-				dispatcher.forward(request, response);
+//				ServletContext context = request.getServletContext();
+//				RequestDispatcher dispatcher = context.getRequestDispatcher("/dashBoard");
+//				dispatcher.forward(request, response);
+				
+				response.sendRedirect("dashBoard");
+				
+				//viewdashBoard(request, response);
 			}  
 			else{  
 				RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/pages/sign-in.jsp");
