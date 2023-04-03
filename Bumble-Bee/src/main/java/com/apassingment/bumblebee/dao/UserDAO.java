@@ -44,8 +44,6 @@ public class UserDAO {
 			user.setEmial(rs.getString("email"));
 			user.setStatus(rs.getByte("status"));
 			
-			
-			
 			userList.add(user);
 		}
 		
@@ -113,7 +111,6 @@ public class UserDAO {
 		ps.setString(5, user.getContact());
 		ps.setString(6, user.getEmial());
 		ps.setString(7, id);
-		
 		ps.executeUpdate(); 
 		
 		

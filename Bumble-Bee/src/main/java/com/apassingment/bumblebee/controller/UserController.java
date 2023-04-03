@@ -39,7 +39,6 @@ public class UserController extends HttpServlet{
 			}
 		}
 		
-		
 		if("edit".equals(type)) {
 			editUser(request, response,id);
 		}else if (!(req==null)) {
@@ -54,7 +53,7 @@ public class UserController extends HttpServlet{
 	}	
 	
 	private void viewUserList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<User> UserList = new ArrayList<User>();;
+		List<User> UserList = new ArrayList<User>();
 		try {
 			UserList = userService.getUserList();
 		} catch (ClassNotFoundException e) {

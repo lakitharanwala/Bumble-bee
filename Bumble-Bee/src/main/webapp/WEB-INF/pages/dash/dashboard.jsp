@@ -57,6 +57,36 @@
             <span class="nav-link-text ms-1">Admin Dashboard</span>
           </a>
         </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link " href="<%=request.getContextPath()%>/user-List">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-app text-info text-sm opacity-10"></i>
+            </div>
+            <span  class="nav-link-text ms-1">User accounts</span>
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link " href="<%=request.getContextPath()%>/category-list">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Categories</span>
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link " href="<%=request.getContextPath()%>/brands-list">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Brands</span>
+          </a>
+        </li>
+        
         <li class="nav-item">
           <a class="nav-link " href="../pages/tables.html">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -65,32 +95,11 @@
             <span class="nav-link-text ms-1">Products</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link " href="../pages/billing.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Categories</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="../pages/virtual-reality.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-app text-info text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">User accounts</span>
-          </a>
-        </li>
+        
+        
         
        
-        <li class="nav-item">
-          <a class="nav-link " href="../pages/profile.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Brands</span>
-          </a>
-        </li>
+        
         
         
     </div>
@@ -220,18 +229,23 @@
           <a href="<%=request.getContextPath()%>/user-List" arget="_blank" class="btn bg-gradient-success btn-lg vh-90 w-100 mb-1">
           User accounts  <i class="fa fa-users" aria-hidden="true"> </i></a> 
         </div>
+        
+         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">    
+          <a href="<%=request.getContextPath()%>/category-list" arget="_blank" class="btn bg-gradient-success btn-lg vh-90 w-100 mb-1">
+          Category  <i class="fa fa-th-large" aria-hidden="true"></i></a> 
+        </div>
+        
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">    
+           <a href="<%=request.getContextPath()%>/brands-list" arget="_blank" class="btn bg-gradient-success btn-lg vh-90 w-100 mb-1">
+          brands <i class="fa fa-apple" aria-hidden="true"></i></a> 
+        </div>
+        
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">    
           <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard" target="_blank" class="btn bg-gradient-warning btn-lg vh-90 w-100 mb-1">
           products <i class="fa fa-codepen" aria-hidden="true"></i></a> 
         </div>
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">    
-          <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard" target="_blank" class="btn bg-gradient-warning btn-lg vh-90 w-100 mb-1">
-          catogeris <i class="fa fa-th-large" aria-hidden="true"></i></a> 
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">    
-          <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard" target="_blank" class="btn bg-gradient-warning btn-lg vh-90 w-100 mb-1">
-          brands <i class="fa fa-apple" aria-hidden="true"></i></a> 
-        </div>
+       
+        
 
       
     </div>

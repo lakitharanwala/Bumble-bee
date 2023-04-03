@@ -90,5 +90,73 @@
   	<url-pattern>/search</url-pattern>
   </servlet-mapping>
   
+  <!-- ///////////////category/////////////// -->
+  
+  <servlet>
+  	<servlet-name>CategoryController</servlet-name>
+  	<display-name>CategoryController</display-name>
+  	<description>user requests</description>
+  	<servlet-class>com.apassingment.bumblebee.controller.CategoryController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>CategoryController</servlet-name>
+  	<url-pattern>/category-list</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>CategoryController</servlet-name>
+  	<url-pattern>/save-category</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>CategoryController</servlet-name>
+  	<url-pattern>/delete-category</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>CategoryController</servlet-name>
+  	<url-pattern>/edit-category</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>CategoryController</servlet-name>
+  	<url-pattern>/search-cat</url-pattern>
+  </servlet-mapping>
+  
+   <!-- ///////////////brand/////////////// -->
+  
+  <servlet>
+  	<servlet-name>BrandController</servlet-name>
+  	<display-name>BrandController</display-name>
+  	<description>BrandController requests</description>
+  	<servlet-class>com.apassingment.bumblebee.controller.BrandController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>BrandController</servlet-name>
+  	<url-pattern>/brands-list</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>BrandController</servlet-name>
+  	<url-pattern>/save-brand</url-pattern>
+  </servlet-mapping>
+  
+   <servlet-mapping>
+  	<servlet-name>BrandController</servlet-name>
+  	<url-pattern>/delete-brand</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>BrandController</servlet-name>
+  	<url-pattern>/search-brand</url-pattern>
+  </servlet-mapping>
+  
+   <servlet-mapping>
+  	<servlet-name>BrandController</servlet-name>
+  	<url-pattern>/edit-brand</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
  

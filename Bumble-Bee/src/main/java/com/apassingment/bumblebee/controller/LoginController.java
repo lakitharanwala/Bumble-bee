@@ -46,9 +46,7 @@ public class LoginController extends HttpServlet{
 		try {
 			if(loginService.validate(userName,password)){  
 
-				
 				response.sendRedirect("dashBoard");
-				
 				//viewdashBoard(request, response);
 			}  
 			else{  

@@ -4,25 +4,21 @@ public class Brand {
 
 	private String Id;
     private String Name;
-    private String status;
+    private Byte status;
     private String usedAmount;
     private String insertDateTime;
     private String updateDateTime;
     private String insertUser;
     private String updateUser;
     
-	private Brand(String id, String name, String status, String usedAmount, String insertDateTime,
-			String updateDateTime, String insertUser, String updateUser) {
-		super();
-		setId(id);
-		setName(name);
-		this.setStatus(status);
-		this.setUsedAmount(usedAmount);
-		this.setInsertDateTime(insertDateTime);
-		this.setUpdateDateTime(updateDateTime);
-		this.setInsertUser(insertUser);
-		this.setUpdateUser(updateUser);
-	}
+	/*
+	 * private Brand(String id, String name, String status, String usedAmount,
+	 * String insertDateTime, String updateDateTime, String insertUser, String
+	 * updateUser) { super(); setId(id); setName(name); this.setStatus(status);
+	 * this.setUsedAmount(usedAmount); this.setInsertDateTime(insertDateTime);
+	 * this.setUpdateDateTime(updateDateTime); this.setInsertUser(insertUser);
+	 * this.setUpdateUser(updateUser); }
+	 */
 
 	public String getId() {
 		return Id;
@@ -40,11 +36,11 @@ public class Brand {
 		Name = name;
 	}
 
-	public String getStatus() {
+	public Byte getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(Byte status) {
 		this.status = status;
 	}
 

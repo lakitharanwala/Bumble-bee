@@ -1,28 +1,17 @@
 package com.apassingment.bumblebee.model;
 
-public class category {
+public class Category {
 
 	private String Id;
     private String category;
-    private String status;
+    private Byte status;
     private String usedAmount;
     private String insertDateTime;
     private String updateDateTime;
     private String insertUser;
     private String updateUser;
     
-    private category(String id, String category, String status, String usedAmount, String insertDateTime,
-			String updateDateTime, String insertUser, String updateUser) {
-
-		setId(id);
-		this.setCategory(category);
-		this.setStatus(status);
-		this.setUsedAmount(usedAmount);
-		this.setInsertDateTime(insertDateTime);
-		this.setUpdateDateTime(updateDateTime);
-		this.setInsertUser(insertUser);
-		this.setUpdateUser(updateUser);
-	}
+    
 
 	public String getId() {
 		return Id;
@@ -40,11 +29,11 @@ public class category {
 		this.category = category;
 	}
 
-	public String getStatus() {
+	public Byte getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(Byte status) {
 		this.status = status;
 	}
 

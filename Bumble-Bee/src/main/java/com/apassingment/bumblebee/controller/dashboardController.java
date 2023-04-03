@@ -22,7 +22,7 @@ public class dashboardController extends HttpServlet{
 	}
 	
 	private void viewdashBoard(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/pages/dashboard.jsp");
+		RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/pages/dash/dashboard.jsp");
 		rd.forward(request, response);
 	}
 	
