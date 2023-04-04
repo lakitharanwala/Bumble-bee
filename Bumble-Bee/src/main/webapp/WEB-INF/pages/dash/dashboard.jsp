@@ -88,7 +88,7 @@
         </li>
         
         <li class="nav-item">
-          <a class="nav-link " href="../pages/tables.html">
+          <a class="nav-link " href="<%=request.getContextPath()%>/product-list">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
             </div>
@@ -240,10 +240,18 @@
           brands <i class="fa fa-apple" aria-hidden="true"></i></a> 
         </div>
         
+        
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">    
-          <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard" target="_blank" class="btn bg-gradient-warning btn-lg vh-90 w-100 mb-1">
-          products <i class="fa fa-codepen" aria-hidden="true"></i></a> 
+           <a href="<%=request.getContextPath()%>/product-list" arget="_blank" class="btn bg-gradient-success btn-lg vh-90 w-100 mb-1">
+         products <i class="fa fa-codepen" aria-hidden="true"></i></a> 
         </div>
+       
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">    
+           <a href="<%=request.getContextPath()%>/sales-list" arget="_blank" class="btn bg-gradient-success btn-lg vh-90 w-100 mb-1">
+         Sales <i class="fa fa-usd" aria-hidden="true"></i></a>  
+        </div>
+       
+       
        
         
 

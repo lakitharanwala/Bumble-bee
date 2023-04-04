@@ -4,27 +4,29 @@ public class UserHaveProducts {
 
 	private String Id;
     private String productId;
+    private String productName;
     private String loanBalance;
     private String userId;
-    private String status;
+    private String user;
+    private Byte status;
     private String insertDateTime;
     private String updateDateTime;
     private String insertUser;
     private String updateUser;
     
-	private UserHaveProducts(String id, String productId, String loanBalance, String userId, String status,
-			String insertDateTime, String updateDateTime, String insertUser, String updateUser) {
-		super();
-		setId(id);
-		this.setProductId(productId);
-		this.setLoanBalance(loanBalance);
-		this.setUserId(userId);
-		this.setStatus(status);
-		this.setInsertDateTime(insertDateTime);
-		this.setUpdateDateTime(updateDateTime);
-		this.setInsertUser(insertUser);
-		this.setUpdateUser(updateUser);
-	}
+//	private UserHaveProducts(String id, String productId, String loanBalance, String userId, String status,
+//			String insertDateTime, String updateDateTime, String insertUser, String updateUser) {
+//		super();
+//		setId(id);
+//		this.setProductId(productId);
+//		this.setLoanBalance(loanBalance);
+//		this.setUserId(userId);
+//		this.setStatus(status);
+//		this.setInsertDateTime(insertDateTime);
+//		this.setUpdateDateTime(updateDateTime);
+//		this.setInsertUser(insertUser);
+//		this.setUpdateUser(updateUser);
+//	}
 
 	public String getId() {
 		return Id;
@@ -58,11 +60,11 @@ public class UserHaveProducts {
 		this.userId = userId;
 	}
 
-	public String getStatus() {
+	public Byte getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(Byte status) {
 		this.status = status;
 	}
 
@@ -97,6 +99,24 @@ public class UserHaveProducts {
 	public void setUpdateUser(String updateUser) {
 		this.updateUser = updateUser;
 	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public String getUser() {
+		return user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+	}
+
+	
 	
     
 }

@@ -4,8 +4,13 @@ public class Products {
 	
 	private String Id;
     private String categoryId;
+    private String categoryName;
     private String Name;
-    private String status;
+    private String quantity;
+    private String price;
+    private String brand;
+    private String brandName;
+    private Byte status;
     private String usedAmount;
     private String insertDateTime;
     private String updateDateTime;
@@ -13,21 +18,6 @@ public class Products {
     private String updateUser;
     
     
-    
-    private Products(String id, String categoryId, String name, String status, String usedAmount,
-		String insertDateTime, String updateDateTime, String insertUser, String updateUser) {
-		Id = id;
-		this.categoryId = categoryId;
-		Name = name;
-		this.status = status;
-		this.usedAmount = usedAmount;
-		this.insertDateTime = insertDateTime;
-		this.updateDateTime = updateDateTime;
-		this.insertUser = insertUser;
-		this.updateUser = updateUser;
-	}
-
-
 
     public String getId() {
 		return Id;
@@ -48,10 +38,10 @@ public class Products {
 		Name = name;
 	}
 
-	public String getStatus() {
+	public Byte getStatus() {
 		return status;
 	}
-	public void setStatus(String status) {
+	public void setStatus(Byte status) {
 		this.status = status;
 	}
 	public String getUsedAmount() {
@@ -83,6 +73,36 @@ public class Products {
 	}
 	public void setUpdateUser(String updateUser) {
 		this.updateUser = updateUser;
+	}
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
+	public String getBrand() {
+		return brand;
+	}
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+	public String getCategoryName() {
+		return categoryName;
+	}
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+	public String getBrandName() {
+		return brandName;
+	}
+	public void setBrandName(String brandName) {
+		this.brandName = brandName;
+	}
+	public String getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(String quantity) {
+		this.quantity = quantity;
 	}
 }
 

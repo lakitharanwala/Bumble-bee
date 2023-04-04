@@ -158,5 +158,52 @@
   	<url-pattern>/edit-brand</url-pattern>
   </servlet-mapping>
   
+   <!-- ///////////////product/////////////// -->
+  
+  <servlet>
+  	<servlet-name>ProductController</servlet-name>
+  	<display-name>ProductController</display-name>
+  	<description>ProductController requests</description>
+  	<servlet-class>com.apassingment.bumblebee.controller.ProductController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ProductController</servlet-name>
+  	<url-pattern>/product-list</url-pattern>
+  </servlet-mapping>
+  
+   <servlet-mapping>
+  	<servlet-name>ProductController</servlet-name>
+  	<url-pattern>/delete-product</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>ProductController</servlet-name>
+  	<url-pattern>/search-product</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>ProductController</servlet-name>
+  	<url-pattern>/save-product</url-pattern>
+  </servlet-mapping>
+  
+   <!-- ///////////////SalesController/////////////// -->
+  
+  <servlet>
+  	<servlet-name>SalesController</servlet-name>
+  	<display-name>SalesController</display-name>
+  	<description>SalesController requests</description>
+  	<servlet-class>com.apassingment.bumblebee.controller.SalesController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>SalesController</servlet-name>
+  	<url-pattern>/sales-list</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>SalesController</servlet-name>
+  	<url-pattern>/search-sales</url-pattern>
+  </servlet-mapping>
 </web-app>
  
