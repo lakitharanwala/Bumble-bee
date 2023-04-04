@@ -168,6 +168,51 @@ Connection connection =connection();
 		connection.close();
 		return products;
 	}
+
+	public Products editProduct(Products products) throws ClassNotFoundException, SQLException {
+		String id=products.getId();
+		Connection connection =connection();
+//		String quray ="INSERT INTO products(Id,name,status,category_Id,price,brand_id,quantity)"
+//				+ "VALUES (?,?,?,?,?,?,?)";
+		
+		String quray="UPDATE products SET name=?,CATEGORY_ID=?, price=?, brand_id=?, quantity=? WHERE Id = ?";
+		
+		String categoryName ="SELECT * FROM categorys WHERE CATEGORYE =? ";
+		String brandName ="SELECT * FROM brand WHERE name =? ";
+		
+		String can=products.getCategoryName();
+		String brn=products.getBrandName();
+		
+		PreparedStatement prep=connection.prepareStatement(categoryName);
+		prep.setString(1, can);
+		ResultSet rws=prep.executeQuery();
+		
+		while(rws.next()) {
+			products.setCategoryId(rws.getString("id"));
+		}
+		
+		PreparedStatement pre=connection.prepareStatement(brandName);
+		pre.setString(1, brn);
+		ResultSet res=pre.executeQuery();
+		
+		while(res.next()) {
+			products.setBrand(res.getString("id"));
+		}
+		
+		
+		PreparedStatement ps=connection.prepareStatement(quray);
+		ps.setString(1, products.getName());
+		ps.setString(2, products.getCategoryId());
+		ps.setString(3, products.getPrice());
+		ps.setString(4, products.getBrand());
+		ps.setString(5, products.getQuantity());
+		ps.setString(6, id);
+		
+		ps.executeUpdate();
+		ps.close();
+		connection.close();
+		return products;
+	}
 	
 	
 }

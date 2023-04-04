@@ -27,7 +27,7 @@ public class salesDAO {
 	
 	public List<UserHaveProducts> getAllsales() throws ClassNotFoundException, SQLException {
 		Connection connection =connection();
-		String quray ="SELECT * FROM user_has_products WHERE status = 0 ";
+		String quray ="SELECT * FROM user_has_products WHERE status = 0 or status = 3 ";
 		String product ="SELECT * FROM products WHERE id =? ";
 		String userName ="SELECT * FROM user WHERE user_id =? ";
 		

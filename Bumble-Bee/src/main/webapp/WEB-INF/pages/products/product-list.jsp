@@ -47,7 +47,7 @@
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
             <div class="input-group">
                <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-                <input id="SInput" type="text" class="form-control" placeholder="Brand name" aria-label="User Name"  name="name">
+                <input id="SInput" type="text" class="form-control" placeholder="product name" aria-label="User Name"  name="name">
             </div>
           	</div>
         </div>
@@ -78,6 +78,11 @@
   		<div class="form-group">
     	<label for="exampleInputPassword1">Add price</label>
     		<input type="text" class="form-control" id="exampleInputPassword1" placeholder="price" name="price">
+  		</div>
+  		
+  		<div class="form-group">
+    	<label for="exampleInputPassword1">Add quantity</label>
+    		<input type="text" class="form-control" id="exampleInputPassword1" placeholder="price" name="quantity">
   		</div>
   		
   		<label for="exampleInputPassword1">Add category</label>
@@ -203,11 +208,11 @@
                          		<p class="text-xs text-danger font-weight-bold mb-0">Deactive</p>  
                       		</td>
                       	</tag:if>
-          <%-- 
+         
                       <td class="align-middle">
-                        <a href="#" data-target="#exampleModal1" onclick="updateDiv('${product.id}','${product.name}')" data-toggle="modal" id="${product.id}" class="text-info font-weight-bold text-xs myLink">
+                        <a href="#" data-target="#exampleModal1" onclick="updateDiv('${product.id}','${product.name}','${product.price}','${product.quantity}')" data-toggle="modal" id="${product.id}" class="text-info font-weight-bold text-xs myLink">
                        Edit</a>
-                      </td> --%>
+                      </td> 
                      
                     
                      
@@ -228,7 +233,19 @@
         </div>
       </div>
       
-     
+      <script >
+      function updateDiv(value,value1,value2,value3) {
+    	  var myInput = document.getElementById("myInput");
+    	  var myInput1 = document.getElementById("myInput1");
+    	  var price = document.getElementById("price");
+    	  var quan = document.getElementById("quan");
+    	  myInput.value = value;
+    	  myInput1.value = value1;
+    	  price.value=value2;
+    	  quan.value=value3;
+    	}
+     </script>
+      
   
     				<div id="exampleModal1" class="modal" tabindex="-1" role="dialog">
 						  <div class="modal-dialog" role="document">
@@ -240,11 +257,32 @@
 						        </button>
 						      </div>
 						      
-						       <form role="form" action="edit-brand?type=edit" method="POST">
+						       <form role="form" action="edit-product?type=edit" method="POST">
 						      <div class="modal-body">
 						  
   								<input id="myInput1" type="text" class="form-control"  placeholder="edit" name="name">
   								<input id="myInput" type="hidden" class="form-control"  name="Id" >
+  								&nbsp;
+  								<input id="price" type="text" class="form-control"  placeholder="edit" name="price">
+  								&nbsp;
+  								<input id="quan" type="text" class="form-control"  placeholder="edit" name="quantity">
+						      &nbsp;
+						      <label for="exampleInputPassword1">Add category</label>
+						  		 <select class="form-control" id="exampleFormControlSelect1" name="category">
+						  		  <tag:forEach var="cate" items="${cate}">
+						  		    <option>${cate.category}</option>
+						  		  </tag:forEach>
+						    	</select>
+						    	
+						    	&nbsp;
+						    	
+						    	<label for="exampleInputPassword1">Add Brand</label>
+						    	 <select class="form-control" id="exampleFormControlSelect1" name="brand">
+								     <tag:forEach var="brand" items="${brand}">
+						  		    <option>${brand.name}</option>
+						  		  </tag:forEach>
+						    	</select>
+						      
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" onclick="toggleModal()"class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -377,14 +415,7 @@
   });
 </script>
 
-	<script >
-      function updateDiv(value,value1) {
-    	  var myInput = document.getElementById("myInput");
-    	  var myInput1 = document.getElementById("myInput1");
-    	  myInput.value = value;
-    	  myInput1.value = value1;
-    	}
-     </script>
+	
   
 </body>
 

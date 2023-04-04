@@ -1,5 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+
+    
+    <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" isELIgnored="false"  session = "false"%>
+    <%@taglib prefix="tag" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,16 +58,20 @@
                 <div class="card-body">
                   <form role="form" action="login" method="POST"> 
                     <div class="mb-3">
-                      <input type="text" class="form-control form-control-lg" placeholder="UserName" aria-label="Email" name="userName">
+                      <input type="text" class="form-control form-control-lg" placeholder="UserName" aria-label="Email" name="userName" required>
                     </div>
                     <div class="mb-3">
-                      <input type="text" class="form-control form-control-lg" placeholder="Password" aria-label="Password" name="password">
+                      <input type="text" class="form-control form-control-lg" placeholder="Password" aria-label="Password" name="password" required>
                     </div>
-                    
+                    <tag var="msg" items="${msg}">
+                    <div class="text-danger font-weight-bold">${msg}</div>
+                    </tag>
                     <div class="text-center">
                       <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Sign in</button>
                     </div>
                   </form>
+                  
+                  	
                 </div>
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-4 text-sm mx-auto">

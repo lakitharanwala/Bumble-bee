@@ -169,9 +169,9 @@
                       	
                       </tag:if>
                       
-                      <tag:if test="${uhp.status eq '1'}">
+                      <tag:if test="${uhp.loanBalance eq '0'}">
                       		<td class="align-middle text-center">
-                         		<p class="text-xs text-danger font-weight-bold mb-0">Deactive</p>  
+                         		<p class="text-xs text-danger font-weight-bold mb-0">payment completed</p>  
                       		</td>
                       	</tag:if>
           <%-- 

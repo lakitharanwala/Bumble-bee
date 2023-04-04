@@ -64,13 +64,38 @@ private static final long serialVersionUID = 1L;
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		try {
-			save(request, response);
-		}  catch (ClassNotFoundException | IOException | SQLException e) {
-			e.printStackTrace();
+		
+		String type = request.getParameter("type");
+		
+		if("edit".equals(type)) {
+			try {
+				editproduct(request, response);
+			} catch (ClassNotFoundException | ServletException | IOException | SQLException e) {
+				e.printStackTrace();
+			 }
+		}else {
+			try {
+				save(request, response);
+			} catch (ClassNotFoundException | IOException | SQLException e) {
+				e.printStackTrace();
+			 }
 		}
+		
+		
 	}
 	
+	private void editproduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, ClassNotFoundException, SQLException {
+		Products products =new Products();  
+		products.setName(request.getParameter("name"));
+		products.setId(request.getParameter("Id"));
+		products.setBrandName(request.getParameter("brand"));
+		products.setCategoryName(request.getParameter("category"));
+		products.setPrice(request.getParameter("price"));
+		products.setQuantity(request.getParameter("quantity"));
+		productService.editproducts(products);
+		response.sendRedirect("product-list");
+	}
+
 	private void save(HttpServletRequest request, HttpServletResponse response) throws IOException, ClassNotFoundException, SQLException {
 		Products products =new Products(); 
 		products.setName(request.getParameter("name"));

@@ -41,4 +41,9 @@ private static ProductService productService;
 		return products;
 	}
 
+	public Products editproducts(Products products) throws ClassNotFoundException, SQLException {
+		return getProductDAO().editProduct(products);
+		
+	}
+
 }
