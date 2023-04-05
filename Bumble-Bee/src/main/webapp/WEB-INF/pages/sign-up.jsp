@@ -68,32 +68,30 @@
             <div class="card-body">
               <form role="form" action="user-profile" method="POST">
                 <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="First Name" aria-label="First Name"   name="firstName">
+                  <input type="text" required="true" class="form-control" placeholder="First Name" aria-label="First Name"   name="firstName">
                 </div>
                 <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="Last Name" aria-label="Last Name"  name="lastName">
+                  <input type="text" required="true" class="form-control" placeholder="Last Name" aria-label="Last Name"  name="lastName">
                 </div>
                 <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="NIC" aria-label="NIC"  name="nic">
+                  <input type="text" required="true" class="form-control" placeholder="NIC" aria-label="NIC"  name="nic">
                 </div>
                 <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="Contact" aria-label="Contact"  name="contact">
+                  <input type="text" required="true" class="form-control" placeholder="Contact" aria-label="Contact"  name="contact">
                 </div>
                 <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="Addres" aria-label="Addres"  name="addres">
+                  <input type="text" required="true" class="form-control" placeholder="Addres" aria-label="Addres"  name="addres">
                 </div>
                 <div class="mb-3">
-                  <input type="email" class="form-control" placeholder="Email" aria-label="Email"  name="email">
+                  <input type="email" required="true" class="form-control" placeholder="Email" aria-label="Email"  name="email">
                 </div>
                 <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="User Name" aria-label="User Name"  name="userName">
+                  <input type="text" required="true" class="form-control" placeholder="User Name" aria-label="User Name"  name="userName">
                 </div>
                 <div class="mb-3">
-                  <input type="password" class="form-control" placeholder="Password" aria-label="Password"  name="password">
+                  <input type="password" required="true" class="form-control" placeholder="Password" aria-label="Password"  name="password">
                 </div>
-                <div class="mb-3">
-                  <input type="password" class="form-control" placeholder="confirm Password" aria-label="confirm Password">
-                </div>
+                
                 <div class="form-check form-check-info text-start">
                   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                   <label class="form-check-label" for="flexCheckDefault">

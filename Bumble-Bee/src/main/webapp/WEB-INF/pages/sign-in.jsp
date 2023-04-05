@@ -61,7 +61,7 @@
                       <input type="text" class="form-control form-control-lg" placeholder="UserName" aria-label="Email" name="userName" required>
                     </div>
                     <div class="mb-3">
-                      <input type="text" class="form-control form-control-lg" placeholder="Password" aria-label="Password" name="password" required>
+                      <input type="password" class="form-control form-control-lg" placeholder="Password" aria-label="Password" name="password" required>
                     </div>
                     <tag var="msg" items="${msg}">
                     <div class="text-danger font-weight-bold">${msg}</div>

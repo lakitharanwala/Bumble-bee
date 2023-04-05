@@ -210,5 +210,20 @@
   	<servlet-name>SalesController</servlet-name>
   	<url-pattern>/search-sales</url-pattern>
   </servlet-mapping>
+  
+ <!-- ///////////////reportgenController/////////////// -->
+  
+  <servlet>
+  	<servlet-name>ReportGenController</servlet-name>
+  	<display-name>ReportGenController</display-name>
+  	<description>ReportGenController requests</description>
+  	<servlet-class>com.apassingment.bumblebee.controller.ReportGenController</servlet-class>
+  </servlet> 
+  
+  <servlet-mapping>
+  	<servlet-name>ReportGenController</servlet-name>
+  	<url-pattern>/gen-report</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
  
