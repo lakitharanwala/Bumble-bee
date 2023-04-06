@@ -83,11 +83,13 @@ public class RegisterController extends HttpServlet{
 	        user.setPassword(request.getParameter("password"));
 	        
 	       String msg="";
+	       
+	       
 			try {
 				registerService.RegisterUser(user);
-				msg="user register succsefull email have sent to you provided email";
+				msg="user register succsefull email have sent to your provided email";
 				String username = "bumblebeeassingment@gmail.com";
-				 String password = "cfknqmjrkhaevrjf";
+				String password = "cfknqmjrkhaevrjf";
 				    
 				 Properties props = new Properties();
 			        props.put("mail.smtp.auth", "true");
@@ -100,6 +102,8 @@ public class RegisterController extends HttpServlet{
 				    @Override
 				    protected PasswordAuthentication getPasswordAuthentication() {
 				        return new PasswordAuthentication(username, password);
+				        
+				        
 				    }
 				});
 				
@@ -125,10 +129,12 @@ public class RegisterController extends HttpServlet{
 				attachmentBodyPart.attachFile(new File("path/to/file"));
 			
 				
+				
 				 
-			} catch (ClassNotFoundException | SQLException e) {
-				msg=e.getMessage();
-				e.printStackTrace();
+			} catch (ClassNotFoundException | SQLException | MessagingException e) {
+				request.setAttribute("msg", msg);
+				RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/pages/sign-in.jsp");
+				rd.forward(request, response);
 			}
 			request.setAttribute("msg", msg);
 			RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/pages/sign-in.jsp");
